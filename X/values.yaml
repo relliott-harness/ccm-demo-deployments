@@ -1,11 +1,11 @@
-name: ccm-bg-1
+name: ccm-httpd
 replicas: 1
 
-image: harnesstx/ccm-bg
+image: apache/httpd
 # dockercfg: ${artifact.source.dockerconfig}
 
 createNamespace: true
-namespace: default
+namespace: ccm
 
 # Service Type allow you to specify what kind of service you want.
 # Possible values for ServiceType are:
@@ -14,7 +14,7 @@ serviceType: ClusterIP
 
 # A Service can map an incoming port to any targetPort.
 # targetPort is where application is listening on inside the container.
-servicePort: 80
+servicePort: 3000
 serviceTargetPort: 80
 
 # Specify all environment variables to be added to the container.
